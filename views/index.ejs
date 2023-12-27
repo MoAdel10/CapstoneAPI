@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <title>Weather App API</title>
+</head>
+<body>
+    <nav class="Navigation-bar">
+        <form action="/getWeather" method="POST">
+            <input type="text" class="text" name="cityName" placeholder="  City">
+            <input type="text" class="text" name="countryName" placeholder="  Country">
+            <button value="Send" class="text" id="Send">Send</button>
+        </form>
+    </nav>
+    <section class="Details-section">
+        <div class="Details-container">
+            <div class="Weather-Details-header">
+                <h2>Weather Details</h2>
+            </div>
+
+            <div class="Weather-Details">
+                <% if(locals.temp){ %>
+                    <h3>City: <%= city  %></h3>
+                    <h3>Temperatrue: <%= temp  %>C</h3>
+                    <h3>Humidity:  <%= Humidity  %>%</h3>
+                <% }else{ %>
+                    <h3>City: No data</h3>
+                    <h3>Temperatrue: No data</h3>
+                    <h3>Humidity: No data</h3>
+                <% } %>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
